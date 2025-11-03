@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log('Hello World');
+      let humanScore = 0;
+      let computerScore = 0;
+      function getComputerChoice() {
+        const randomNumber = Math.random();
+        if (randomNumber < 0.33) {
+          return 'rock';
+        } else if (randomNumber < 0.66) {
+          return 'paper';
+        } else {
+          return 'scissors';
+        }
+      }
+      console.log(getHumanChoice());
+      console.log(getComputerChoice());
+
+      function getHumanChoice() {
+        const play = prompt('Choose Rock, Paper, or Scissors');
+        return play.toLowerCase();
+      }
+
+      function playRound(humanChoice, computerChoice) {
+        if (humanChoice == computerChoice) {
+          alert('It is a tie');
+        } else if (
+          (humanChoice == 'rock' && computerChoice == 'paper') ||
+          (humanChoice == 'paper' && computerChoice == 'scissors') ||
+          (humanChoice == 'scissors' && computerChoice == 'rock')
+        ) {
+          alert(`You lose! ${computerChoice} beats ${humanChoice}`);
+          computerScore++;
+        } else if (
+          (humanChoice == 'rock' && computerChoice == 'scissors') ||
+          (humanChoice == 'paper' && computerChoice == 'rock') ||
+          (humanChoice == 'scissors' && computerChoice == 'paper')
+        ) {
+          alert(`You win! ${humanChoice} beats ${computerChoice}`);
+          humanScore++;
+        } else {
+          alert(`Invalid input. Please try again!`);
+        }
+      }
+
+      function playGame
+    </script>
+  </body>
+</html>
